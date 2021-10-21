@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Route256.MerchandiseService</RootNamespace>
+        <RootNamespace>Route256.MerchandiseService.Presentation</RootNamespace>
     </PropertyGroup>
 
 </Project>
