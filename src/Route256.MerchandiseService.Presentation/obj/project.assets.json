@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\Route256\\Route256.MerchandiseService\\src\\Route256.MerchandiseService\\Route256.MerchandiseService.csproj",
-      "projectName": "Route256.MerchandiseService",
-      "projectPath": "D:\\projects\\Route256\\Route256.MerchandiseService\\src\\Route256.MerchandiseService\\Route256.MerchandiseService.csproj",
+      "projectUniqueName": "D:\\projects\\Route256\\Route256.MerchandiseService\\src\\Route256.MerchandiseService.Presentation\\Route256.MerchandiseService.Presentation.csproj",
+      "projectName": "Route256.MerchandiseService.Presentation",
+      "projectPath": "D:\\projects\\Route256\\Route256.MerchandiseService\\src\\Route256.MerchandiseService.Presentation\\Route256.MerchandiseService.Presentation.csproj",
       "packagesPath": "C:\\Users\\bobsi\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\Route256\\Route256.MerchandiseService\\src\\Route256.MerchandiseService\\obj\\",
+      "outputPath": "D:\\projects\\Route256\\Route256.MerchandiseService\\src\\Route256.MerchandiseService.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
