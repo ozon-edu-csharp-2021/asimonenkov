@@ -2,8 +2,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Route256.MerchandiseService.Server.Models.Requests;
-using Route256.MerchandiseService.Server.Models.Responses;
+using Route256.MerchandiseService.HttpModels.Requests;
+using Route256.MerchandiseService.HttpModels.Responses;
 
 namespace Route256.MerchandiseService.Server.Controllers
 {
@@ -13,7 +13,7 @@ namespace Route256.MerchandiseService.Server.Controllers
     {
         [HttpPost]
         [Route("request-merch")]
-        public async Task<ActionResult<RequestMerchResponse>> RequestMerch (RequestMerchRequest request, CancellationToken token)
+        public async Task<ActionResult<SendRequestToReceiveMerchResponse>> RequestMerch (SendRequestToReceiveMerchRequest sendRequestToReceive, CancellationToken token)
         {
             throw new NotImplementedException();
         }

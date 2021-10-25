@@ -4,8 +4,8 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Route256.MerchandiseService.HttpClient.Interfaces;
-using Route256.MerchandiseService.Server.Models.Requests;
-using Route256.MerchandiseService.Server.Models.Responses;
+using Route256.MerchandiseService.HttpModels.Requests;
+using Route256.MerchandiseService.HttpModels.Responses;
 
 namespace Route256.MerchandiseService.HttpClient
 {
@@ -25,12 +25,12 @@ namespace Route256.MerchandiseService.HttpClient
             return JsonSerializer.Deserialize<GetMerchExtraditionInfoResponse>(body);
         }
 
-        public async Task<RequestMerchResponse> RequestMerch(RequestMerchRequest request, CancellationToken token)
+        public async Task<SendRequestToReceiveMerchResponse> RequestMerch(SendRequestToReceiveMerchRequest sendRequestToReceive, CancellationToken token)
         {
-            var content = new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
+            var content = new StringContent(JsonSerializer.Serialize(sendRequestToReceive), Encoding.UTF8, "application/json");
             using var response = await _httpClient.PostAsync("v1/api/merch/request-merch", content, token);
             var body = await response.Content.ReadAsStringAsync(token);
-            return JsonSerializer.Deserialize<RequestMerchResponse>(body);
+            return JsonSerializer.Deserialize<SendRequestToReceiveMerchResponse>(body);
         }
     }
 }

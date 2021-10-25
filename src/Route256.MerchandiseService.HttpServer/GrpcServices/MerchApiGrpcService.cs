@@ -8,8 +8,8 @@ namespace Route256.MerchandiseService.Server.GrpcServices
 {
     public class MerchApiGrpcService : MerchApiGrpc.MerchApiGrpcBase
     {
-        public override async Task<RequestMerchResponse> RequestMerch(
-            RequestMerchRequest model,
+        public override async Task<SendRequestToReceiveMerchResponse> SendRequestToReceiveMerch(
+            SendRequestToReceiveMerchRequest model,
             ServerCallContext context)
         {
             throw new NotImplementedException();

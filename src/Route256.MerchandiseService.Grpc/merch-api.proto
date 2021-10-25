@@ -5,14 +5,14 @@ package MerchApi;
 import "google/protobuf/empty.proto";
 
 service MerchApiGrpc {
-  rpc RequestMerch (RequestMerchRequest) returns (RequestMerchResponse);
+  rpc SendRequestToReceiveMerch (SendRequestToReceiveMerchRequest) returns (SendRequestToReceiveMerchResponse);
   rpc GetMerchExtraditionInfo (google.protobuf.Empty) returns (GetMerchExtraditionInfoResponse);
 }
 
-message RequestMerchRequest {
+message SendRequestToReceiveMerchRequest {
 }
 
-message RequestMerchResponse {
+message SendRequestToReceiveMerchResponse {
 }
 
 message GetMerchExtraditionInfoResponse {
