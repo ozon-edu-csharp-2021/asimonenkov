@@ -4,6 +4,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6454308F-C38
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.Presentation", "src\Route256.MerchandiseService.Presentation\Route256.MerchandiseService.Presentation.csproj", "{08E48CFC-D6FE-4C47-A0DC-6947DD0EFC38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.HttpServer", "src\Route256.MerchandiseService.HttpServer\Route256.MerchandiseService.HttpServer.csproj", "{8642D267-A663-443F-85E2-E9F45B8287F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.HttpModels", "src\Route256.MerchandiseService.HttpModels\Route256.MerchandiseService.HttpModels.csproj", "{F190CC79-7F36-4123-8A0A-3C69381ACAA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.HttpClient", "src\Route256.MerchandiseService.HttpClient\Route256.MerchandiseService.HttpClient.csproj", "{58B7A192-D04C-4AC0-969E-CE4B5C0BDC87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.Grpc", "src\Route256.MerchandiseService.Grpc\Route256.MerchandiseService.Grpc.csproj", "{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +22,28 @@ Global
 		{08E48CFC-D6FE-4C47-A0DC-6947DD0EFC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08E48CFC-D6FE-4C47-A0DC-6947DD0EFC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08E48CFC-D6FE-4C47-A0DC-6947DD0EFC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8642D267-A663-443F-85E2-E9F45B8287F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8642D267-A663-443F-85E2-E9F45B8287F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8642D267-A663-443F-85E2-E9F45B8287F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8642D267-A663-443F-85E2-E9F45B8287F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F190CC79-7F36-4123-8A0A-3C69381ACAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F190CC79-7F36-4123-8A0A-3C69381ACAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F190CC79-7F36-4123-8A0A-3C69381ACAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F190CC79-7F36-4123-8A0A-3C69381ACAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B7A192-D04C-4AC0-969E-CE4B5C0BDC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B7A192-D04C-4AC0-969E-CE4B5C0BDC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B7A192-D04C-4AC0-969E-CE4B5C0BDC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B7A192-D04C-4AC0-969E-CE4B5C0BDC87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{08E48CFC-D6FE-4C47-A0DC-6947DD0EFC38} = {6454308F-C387-41A3-AB49-1CEBC1169241}
+		{8642D267-A663-443F-85E2-E9F45B8287F4} = {6454308F-C387-41A3-AB49-1CEBC1169241}
+		{F190CC79-7F36-4123-8A0A-3C69381ACAA0} = {6454308F-C387-41A3-AB49-1CEBC1169241}
+		{58B7A192-D04C-4AC0-969E-CE4B5C0BDC87} = {6454308F-C387-41A3-AB49-1CEBC1169241}
+		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6} = {6454308F-C387-41A3-AB49-1CEBC1169241}
 	EndGlobalSection
 EndGlobal

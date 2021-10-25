@@ -1,0 +1,19 @@
+syntax = "proto3";
+option csharp_namespace = "Route256.MerchandiseService.Grpc";
+package MerchApi;
+
+import "google/protobuf/empty.proto";
+
+service MerchApiGrpc {
+  rpc RequestMerch (RequestMerchRequest) returns (RequestMerchResponse);
+  rpc GetMerchExtraditionInfo (google.protobuf.Empty) returns (GetMerchExtraditionInfoResponse);
+}
+
+message RequestMerchRequest {
+}
+
+message RequestMerchResponse {
+}
+
+message GetMerchExtraditionInfoResponse {
+}
