@@ -1,6 +1,6 @@
 ﻿namespace Route256.MerchandiseService.HttpModels.Requests
 {
-    public class SendRequestToReceiveMerchRequest
+    public sealed class SendRequestToReceiveMerchRequest
     {
         
     }

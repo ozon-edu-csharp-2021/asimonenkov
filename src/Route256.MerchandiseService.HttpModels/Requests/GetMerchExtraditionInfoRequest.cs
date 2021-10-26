@@ -1,6 +1,6 @@
 ﻿namespace Route256.MerchandiseService.HttpModels.Requests
 {
-    public class GetMerchExtraditionInfoRequest
+    public sealed class GetMerchExtraditionInfoRequest
     {
         
     }
