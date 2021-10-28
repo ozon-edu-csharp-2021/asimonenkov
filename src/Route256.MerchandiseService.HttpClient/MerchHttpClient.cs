@@ -4,8 +4,8 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Route256.MerchandiseService.HttpClient.Interfaces;
-using Route256.MerchandiseService.HttpModels.Requests;
-using Route256.MerchandiseService.HttpModels.Responses;
+using Route256.MerchandiseService.HttpClient.Models.Requests;
+using Route256.MerchandiseService.HttpClient.Models.Responses;
 
 namespace Route256.MerchandiseService.HttpClient
 {

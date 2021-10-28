@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Route256.MerchandiseService.Presentation.Infrastructure.Extensions;
 
 namespace Route256.MerchandiseService.Presentation
 {
@@ -12,6 +13,8 @@ namespace Route256.MerchandiseService.Presentation
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); })
+                .AddInfrastructure()
+                .AddHttp();
     }
 }

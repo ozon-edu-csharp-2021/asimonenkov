@@ -8,4 +8,8 @@
       <ProjectReference Include="..\Route256.MerchandiseService.HttpModels\Route256.MerchandiseService.HttpModels.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models" />
+    </ItemGroup>
+
 </Project>
