@@ -1,8 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Route256.MerchandiseService.Presentation.Infrastructure.Extensions;
+using Microsoft.Extensions.Logging;
 
-namespace Route256.MerchandiseService.Presentation
+namespace Route256.MerchandiseService.HttpModels
 {
     public class Program
     {
@@ -13,8 +18,6 @@ namespace Route256.MerchandiseService.Presentation
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); })
-                .AddInfrastructure()
-                .AddHttp();
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }
 }
