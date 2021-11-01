@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.Grpc", "src\Route256.MerchandiseService.Grpc\Route256.MerchandiseService.Grpc.csproj", "{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.Domain", "src\Route256.MerchandiseService.Domain\Route256.MerchandiseService.Domain.csproj", "{B0EA0408-D164-4F92-8D03-C3547E29490B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,10 +28,15 @@ Global
 		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0EA0408-D164-4F92-8D03-C3547E29490B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0EA0408-D164-4F92-8D03-C3547E29490B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0EA0408-D164-4F92-8D03-C3547E29490B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0EA0408-D164-4F92-8D03-C3547E29490B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8642D267-A663-443F-85E2-E9F45B8287F4} = {6454308F-C387-41A3-AB49-1CEBC1169241}
 		{58B7A192-D04C-4AC0-969E-CE4B5C0BDC87} = {6454308F-C387-41A3-AB49-1CEBC1169241}
 		{82A18AD5-8F74-4CCE-9827-346D50E1AFB6} = {6454308F-C387-41A3-AB49-1CEBC1169241}
+		{B0EA0408-D164-4F92-8D03-C3547E29490B} = {6454308F-C387-41A3-AB49-1CEBC1169241}
 	EndGlobalSection
 EndGlobal
