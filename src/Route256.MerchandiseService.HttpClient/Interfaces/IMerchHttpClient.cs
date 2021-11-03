@@ -8,7 +8,7 @@ namespace Route256.MerchandiseService.HttpClient.Interfaces
 {
     public interface IMerchHttpClient
     {
-        Task<GetMerchExtraditionInfoResponse> GetMerchExtraditionInfo(CancellationToken token);
+        Task<GetMerchGiveOutInfoResponse> GetMerchExtraditionInfo(CancellationToken token);
         Task<SendRequestToReceiveMerchResponse> RequestMerch(SendRequestToReceiveMerchRequest sendRequestToReceive, CancellationToken token);
     }
 }
