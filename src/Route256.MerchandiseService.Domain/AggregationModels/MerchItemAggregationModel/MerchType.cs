@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.MerchItemAggregationModel
 {
-    public class MerchType : Enumeration
+    public sealed class MerchType : Enumeration
     {
         public static MerchType Shirt = new(1, nameof(Shirt));
         public static MerchType Sweatshirt = new(2, nameof(Sweatshirt));

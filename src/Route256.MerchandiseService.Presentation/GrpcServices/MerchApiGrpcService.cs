@@ -16,7 +16,7 @@ using Route256.MerchandiseService.Presentation.Exceptions;
 
 namespace Route256.MerchandiseService.Presentation.GrpcServices
 {
-    public class MerchApiGrpcService : MerchApiGrpc.MerchApiGrpcBase
+    public sealed class MerchApiGrpcService : MerchApiGrpc.MerchApiGrpcBase
     {
         private readonly IMediator _mediator;
         private readonly ILogger _logger;

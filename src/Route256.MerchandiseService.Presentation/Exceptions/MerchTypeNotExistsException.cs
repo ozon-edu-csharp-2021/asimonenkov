@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Presentation.Exceptions
 {
-    public class MerchTypeNotExistsException : Exception
+    public sealed class MerchTypeNotExistsException : Exception
     {
         /// <summary>
         /// Исключение, вызываемое, если типа мерча, переданного в запросе не существует

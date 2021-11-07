@@ -7,7 +7,7 @@ namespace Route256.MerchandiseService.Infrastructure.Queries.GetMerchItemGiveOut
     /// <summary>
     /// Запрос на получение информации о выдаче мерча сотруднику
     /// </summary>
-    public class GetMerchItemExtraditionInfoRequestQuery : IRequest<Models.Responses.GetMerchItemGiveOutInfoResponse>
+    public sealed class GetMerchItemExtraditionInfoRequestQuery : IRequest<Models.Responses.GetMerchItemGiveOutInfoResponse>
     {
         public EmployeeId EmployeeId { get; set; }
         public MerchItem MerchItem { get; set; }

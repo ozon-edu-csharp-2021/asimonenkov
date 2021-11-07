@@ -28,5 +28,25 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchItemR
         /// <param name="cancellationToken">Токен для отмены операции. <see cref="CancellationToken"/></param>
         /// <returns>Объект запроса</returns>
         Task<IReadOnlyList<ExtraditeMerchItemRequest> > FindByEmployeeIdAndMerchId(EmployeeId employeeId, MerchId merchId, CancellationToken cancellationToken = default);
+        
+        /// <summary>
+        /// Получить запрос на выдачу мерча по идентификатору
+        /// Если запрос не найден, выдает ошибку
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="cancellationToken">Токен для отмены операции. <see cref="CancellationToken"/></param>
+        /// <returns>Объект запроса</returns>
+        Task<IReadOnlyList<ExtraditeMerchItemRequest>> GetByIdAsync(RequestNumber number, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Получить запросы на выдачу мерча по идентификатору сотрудника и идентификатору мерча
+        /// Если запрос не найден, выдает ошибку
+        /// </summary>
+        /// <param name="employeeId"></param>
+        /// <param name="merchId"></param>
+        /// <param name="cancellationToken">Токен для отмены операции. <see cref="CancellationToken"/></param>
+        /// <returns>Объект запроса</returns>
+        Task<IReadOnlyList<ExtraditeMerchItemRequest> > GetByEmployeeIdAndMerchId(EmployeeId employeeId, MerchId merchId, CancellationToken cancellationToken = default);
+
     }
 }

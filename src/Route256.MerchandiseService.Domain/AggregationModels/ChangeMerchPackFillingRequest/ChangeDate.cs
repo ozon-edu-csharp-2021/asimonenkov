@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.ChangeMerchPackFillingRequest
 {
-    public class ChangeDate
+    public sealed class ChangeDate
     {
         public ChangeDate(DateTime value)
         {

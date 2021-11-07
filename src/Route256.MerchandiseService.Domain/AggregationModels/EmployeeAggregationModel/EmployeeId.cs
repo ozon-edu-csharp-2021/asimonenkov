@@ -4,7 +4,7 @@ using Route256.MerchandiseService.Domain.Models;
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.EmployeeAggregationModel
 {
-    public class EmployeeId : ValueObject
+    public sealed class EmployeeId : ValueObject
     {
         private Guid Value { get; }
         

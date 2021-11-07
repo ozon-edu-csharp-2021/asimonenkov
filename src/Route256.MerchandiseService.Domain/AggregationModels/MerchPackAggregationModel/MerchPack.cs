@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Route256.MerchandiseService.Domain.AggregationModels.MerchItemAggregationModel;
+using Route256.MerchandiseService.Domain.Events;
 using Route256.MerchandiseService.Domain.Exceptions.MerchPackItemAggregate;
 using Route256.MerchandiseService.Domain.Models;
 
@@ -11,7 +12,7 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.MerchPackAggregat
     /// Сущность набора мерча
     /// Количество мерча в наборе начинается с 1 позиции
     /// </summary>
-    public class MerchPack : Entity
+    public sealed class MerchPack : Entity
     {
         public MerchPack(MerchPackName merchPackName,
             IReadOnlyList<MerchId> merchPackFilling)
@@ -27,7 +28,7 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.MerchPackAggregat
         /// </summary>
         /// <param name="packId"></param>
         /// <param name="merchPackFilling"></param>
-        public void SetPackFilling(IReadOnlyList<MerchId> merchPackFilling)
+        public void SetPackFilling(IReadOnlyList<MerchId> merchPackFilling, MerchPackName merchPackName)
         {
             if (merchPackFilling.All(x => PackFilling.All(y => y.Value == x.Value)))
             {
@@ -35,6 +36,10 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.MerchPackAggregat
             }
 
             PackFilling = merchPackFilling;
+            
+            var setMerchPackFillingDomainEvent = new SetMerchPackFillingDomainEvent(merchPackName, merchPackFilling);
+
+            this.AddDomainEvent(setMerchPackFillingDomainEvent);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Domain.Exceptions
 {
-    public class NegativeValueException : Exception
+    public sealed class NegativeValueException : Exception
     {
         public NegativeValueException(string message) : base(message)
         {

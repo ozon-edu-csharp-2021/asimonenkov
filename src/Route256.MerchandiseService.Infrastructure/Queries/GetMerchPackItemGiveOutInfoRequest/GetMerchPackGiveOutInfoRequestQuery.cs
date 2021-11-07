@@ -8,7 +8,7 @@ namespace Route256.MerchandiseService.Infrastructure.Queries.GetMerchPackItemGiv
     /// <summary>
     /// Запрос на получение информации о выдаче набора мерча сотруднику
     /// </summary>
-    public class GetMerchPackExtraditionInfoRequestQuery : IRequest<GetMerchPackGiveOutInfoResponse>
+    public sealed class GetMerchPackExtraditionInfoRequestQuery : IRequest<GetMerchPackGiveOutInfoResponse>
     {
         public EmployeeId EmployeeId { get; set; }
         public MerchPackName MerchPackName { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Presentation.Exceptions
 {
-    public class ColourNotExistsException : Exception
+    public sealed class ColourNotExistsException : Exception
     {
         /// <summary>
         /// Исключение, вызываемое, если цвета мерча, переданного в запросе не существует

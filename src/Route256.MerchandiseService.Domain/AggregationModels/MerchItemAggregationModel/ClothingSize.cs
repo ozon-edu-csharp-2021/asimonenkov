@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.MerchItemAggregationModel
 {
-    public class ClothingSize : Enumeration
+    public sealed class ClothingSize : Enumeration
     {
         public static ClothingSize XS = new(1, nameof(XS));
         public static ClothingSize S = new(2, nameof(S));

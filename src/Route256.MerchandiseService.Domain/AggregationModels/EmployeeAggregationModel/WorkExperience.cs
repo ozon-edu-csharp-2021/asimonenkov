@@ -3,7 +3,7 @@ using Route256.MerchandiseService.Domain.Models;
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.EmployeeAggregationModel
 {
-    public class WorkExperience : ValueObject
+    public sealed class WorkExperience : ValueObject
     {
         public WorkExperience(int value)
         {

@@ -8,7 +8,7 @@ namespace Route256.MerchandiseService.Infrastructure.Commands.ChangePackFillingR
     /// <summary>
     /// Команда на изменение состава набора мерча
     /// </summary>
-    public class ChangePackFillingRequestCommand : IRequest
+    public sealed class ChangePackFillingRequestCommand : IRequest
     {
         public MerchPackName PackName { get; set; }
         public IReadOnlyList<MerchId> MerchIds { get; set; }

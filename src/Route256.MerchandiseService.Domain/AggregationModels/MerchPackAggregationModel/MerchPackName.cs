@@ -3,7 +3,7 @@ using Route256.MerchandiseService.Domain.Models;
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.MerchPackAggregationModel
 {
-    public class MerchPackName : ValueObject
+    public sealed class MerchPackName : ValueObject
     {
         public string Value { get; }
 

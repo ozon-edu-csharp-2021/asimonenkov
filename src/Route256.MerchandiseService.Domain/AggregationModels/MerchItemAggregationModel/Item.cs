@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.MerchItemAggregationModel
 {
-    public class Item : Entity
+    public sealed class Item : Entity
     {
         public ItemType Type { get; }
 

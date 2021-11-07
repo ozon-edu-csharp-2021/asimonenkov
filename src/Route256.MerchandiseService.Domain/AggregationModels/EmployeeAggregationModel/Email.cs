@@ -3,7 +3,7 @@ using Route256.MerchandiseService.Domain.Models;
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.EmployeeAggregationModel
 {
-    public class Email : ValueObject
+    public sealed class Email : ValueObject
     {
         public Email(string value)
         {

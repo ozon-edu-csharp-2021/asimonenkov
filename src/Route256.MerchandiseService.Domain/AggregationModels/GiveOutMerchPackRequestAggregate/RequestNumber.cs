@@ -1,6 +1,6 @@
 ﻿namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchPackRequestAggregate
 {
-    public class RequestNumber
+    public sealed class RequestNumber
     {
         public RequestNumber(long value)
         {

@@ -4,7 +4,7 @@ using Route256.MerchandiseService.Domain.Models;
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.EmployeeAggregationModel
 {
-    public class Employee : Entity
+    public sealed class Employee : Entity
     {
         public Employee(Name name, Position position, WorkExperience workExperience, Email email)
         {

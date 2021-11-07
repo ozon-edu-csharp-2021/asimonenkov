@@ -8,7 +8,7 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchPackR
     /// <summary>
     /// Запрос на получение набора мерча
     /// </summary>
-    public class ExtraditeMerchPackRequest : Entity
+    public sealed class ExtraditeMerchPackRequest : Entity
     {
         public ExtraditeMerchPackRequest(RequestNumber requestNumber,
             RequestStatus requestStatus,
@@ -16,6 +16,17 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchPackR
             EmployeeId employeeId)
         {
             RequestNumber = requestNumber;
+            RequestStatus = requestStatus;
+            MerchPackName = merchPackName;
+            EmployeeId = employeeId;
+            SetExtraditionDate();
+        }
+        
+        public ExtraditeMerchPackRequest(
+            RequestStatus requestStatus,
+            MerchPackName merchPackName,
+            EmployeeId employeeId)
+        {
             RequestStatus = requestStatus;
             MerchPackName = merchPackName;
             EmployeeId = employeeId;

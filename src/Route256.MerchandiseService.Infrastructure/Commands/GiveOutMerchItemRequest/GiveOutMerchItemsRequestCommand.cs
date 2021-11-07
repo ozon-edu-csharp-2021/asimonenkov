@@ -8,7 +8,7 @@ namespace Route256.MerchandiseService.Infrastructure.Commands.GiveOutMerchItemRe
     /// <summary>
     /// Команда на выдачу мерча
     /// </summary>
-    public class GiveOutMerchItemsRequestCommand : IRequest
+    public sealed class GiveOutMerchItemsRequestCommand : IRequest
     {
         public EmployeeId EmployeeId { get; set; }
         public IReadOnlyList<MerchItem> MerchItems { get; set; }

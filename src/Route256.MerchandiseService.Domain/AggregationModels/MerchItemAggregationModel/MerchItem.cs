@@ -6,7 +6,7 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.MerchItemAggregat
     /// <summary>
     /// Сущность мерча, как уникальной единцицы
     /// </summary>
-    public class MerchItem : Entity
+    public sealed class MerchItem : Entity
     {
         /// <summary>
         /// Тип мерча

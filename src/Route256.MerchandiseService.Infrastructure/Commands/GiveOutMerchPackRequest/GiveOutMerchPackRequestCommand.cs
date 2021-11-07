@@ -7,7 +7,7 @@ namespace Route256.MerchandiseService.Infrastructure.Commands.GiveOutMerchPackRe
     /// <summary>
     /// Команда на выдачу набора мерча
     /// </summary>
-    public class GiveOutMerchPackRequestCommand : IRequest
+    public sealed class GiveOutMerchPackRequestCommand : IRequest
     {
         public MerchPackName MerchPackName { get; set; }
         public EmployeeId EmployeeId { get; set; }

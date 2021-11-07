@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchPackRequestAggregate
 {
-    public class GiveOutDate
+    public sealed class GiveOutDate
     {
         public GiveOutDate(DateTime value)
         {

@@ -10,7 +10,7 @@ using Route256.MerchandiseService.Infrastructure.Commands.ChangePackFillingReque
 
 namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggregate
 {
-    public class ChangePackFillingRequestCommandHandler : IRequestHandler<ChangePackFillingRequestCommand>
+    internal class ChangePackFillingRequestCommandHandler : IRequestHandler<ChangePackFillingRequestCommand>
     {
         private readonly IChangeMerchPackFillingRequestRepository _requestRepository;
         private readonly IMerchPackAggregationRepository _merchPackAggregationRepository;
@@ -28,17 +28,16 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<Unit> Handle(ChangePackFillingRequestCommand request, CancellationToken cancellationToken)
+        public  async Task<Unit> Handle(ChangePackFillingRequestCommand request, CancellationToken cancellationToken)
         {
-            var merchPack = await _merchPackAggregationRepository.FindByNameAsync(request.PackName, cancellationToken);
-            var newMerchIds = request.MerchIds.Where(x =>
-                !merchPack.PackFilling.Select(x => new Guid(x.Value.ToString())).Contains(x.Value)).ToList(); //поиск id мерча, которых не было в старом наборе
-            var changePackFillingRequest = new ChangeMerchPackFillingRequest(
-                null, request.PackName, newMerchIds);
+            var merchPack = await _merchPackAggregationRepository.GetByNameAsync(request.PackName, cancellationToken);
+            var newMerchIds = request.MerchIds.Where(x => !merchPack.PackFilling.Select(x => x.Value).Contains(x.Value)).ToList(); //поиск id мерча, которых не было в старом наборе
+            var changePackFillingRequest = new ChangeMerchPackFillingRequest(request.PackName, newMerchIds);
 
 
-            merchPack.SetPackFilling(request.MerchIds);
+            merchPack.SetPackFilling(request.MerchIds, merchPack.PackName);
             await _requestRepository.CreateAsync(changePackFillingRequest, cancellationToken);
+            await _merchPackAggregationRepository.SetMerchPackFillingAsync(merchPack.PackName, request.MerchIds);
 
             return Unit.Value;
         }

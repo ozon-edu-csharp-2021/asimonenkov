@@ -6,7 +6,7 @@ using Route256.MerchandiseService.Infrastructure.Commands.CreateMerchPackRequest
 
 namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggregate
 {
-    public class CreateMerchPackRequestCommandHandler : IRequestHandler<CreateMerchPackRequestCommand>
+    internal class CreateMerchPackRequestCommandHandler : IRequestHandler<CreateMerchPackRequestCommand>
     {
         private readonly IMerchPackAggregationRepository _merchPackAggregationRepository;
 

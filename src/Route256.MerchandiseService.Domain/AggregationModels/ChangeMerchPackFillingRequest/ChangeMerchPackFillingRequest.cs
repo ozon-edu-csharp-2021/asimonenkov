@@ -10,13 +10,22 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.ChangeMerchPackFi
     /// <summary>
     /// Запрос на получение набора мерча
     /// </summary>
-    public class ChangeMerchPackFillingRequest : Entity
+    public sealed class ChangeMerchPackFillingRequest : Entity
     {
         public ChangeMerchPackFillingRequest(RequestNumber requestNumber,
             MerchPackName merchPackName,
             IReadOnlyList<MerchId> additionalItems)
         {
             RequestNumber = requestNumber;
+            MerchPackName = merchPackName;
+            AdditionalItems = additionalItems;
+            SetChangeDate();
+        }
+        
+        public ChangeMerchPackFillingRequest(
+            MerchPackName merchPackName,
+            IReadOnlyList<MerchId> additionalItems)
+        {
             MerchPackName = merchPackName;
             AdditionalItems = additionalItems;
             SetChangeDate();

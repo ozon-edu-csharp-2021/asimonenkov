@@ -21,7 +21,7 @@ namespace Route256.MerchandiseService.Domain.Tests
             var merchToAdd = new MerchId[] { new MerchId(Guid.NewGuid()), new MerchId(Guid.NewGuid()) };
             
             //act
-            merchPack.SetPackFilling(merchToAdd);
+            merchPack.SetPackFilling(merchToAdd, merchPack.PackName);
             
             //assert
             Assert.Equal(2, merchPack.PackFilling.Count);
@@ -43,7 +43,7 @@ namespace Route256.MerchandiseService.Domain.Tests
             
             
             //assert
-            Assert.Throws<TheSamePackFillingException>(() => merchPack.SetPackFilling(merchToAdd));
+            Assert.Throws<TheSamePackFillingException>(() => merchPack.SetPackFilling(merchToAdd, merchPack.PackName));
         }
     }
 }

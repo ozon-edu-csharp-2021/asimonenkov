@@ -11,7 +11,7 @@ using Route256.MerchandiseService.Infrastructure.Queries.GetMerchPackItemGiveOut
 
 namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggregate
 {
-    public class GetMerchPackExtraditionInfoRequestQueryHandler : IRequestHandler<
+    internal class GetMerchPackExtraditionInfoRequestQueryHandler : IRequestHandler<
         GetMerchPackExtraditionInfoRequestQuery,
         GetMerchPackGiveOutInfoResponse>
     {
@@ -39,12 +39,8 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
         public async Task<GetMerchPackGiveOutInfoResponse> Handle(GetMerchPackExtraditionInfoRequestQuery request,
             CancellationToken cancellationToken)
         {
-            var merchPackFillingChanges =
-                await _changeMerchPackFillingRequestRepository.FindByNameAsync(request.MerchPackName,
-                    cancellationToken);
-            var giveOutRequests =
-                await _extraditeMerchPackAggregationRepository.FindByEmployeeIdAndMerchPackNameAsync(request.EmployeeId,
-                    request.MerchPackName, cancellationToken);
+            var merchPackFillingChanges = await _changeMerchPackFillingRequestRepository.GetByNameAsync(request.MerchPackName, cancellationToken);
+            var giveOutRequests = await _extraditeMerchPackAggregationRepository.GetByEmployeeIdAndMerchPackNameAsync(request.EmployeeId, request.MerchPackName, cancellationToken);
             var merchItemsToGiveOut = new List<MerchItem>();
 
             if (giveOutRequests.Count == 0)

@@ -8,7 +8,7 @@ namespace Route256.MerchandiseService.Infrastructure.Commands.CreateMerchPackReq
     /// <summary>
     /// Команда на создание набора мерча
     /// </summary>
-    public class CreateMerchPackRequestCommand : IRequest
+    public sealed class CreateMerchPackRequestCommand : IRequest
     {
         public MerchPackName PackName { get; set; }
         public IReadOnlyList<MerchId> MerchIds { get; set; }

@@ -7,7 +7,7 @@ namespace Route256.MerchandiseService.Infrastructure.Models.Responses
     /// <summary>
     /// Модель ответа на запрос информации о пулочении набора мерча сотрудником
     /// </summary>
-    public class GetMerchPackGiveOutInfoResponse
+    public sealed class GetMerchPackGiveOutInfoResponse
     {
         public bool HasGiveOut { get; set; }
         public DateTime? GiveOutDate { get; set; }

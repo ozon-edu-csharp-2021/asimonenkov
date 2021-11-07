@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Presentation.Exceptions
 {
-    public class ClothingSizeNotExistsException : Exception
+    public sealed class ClothingSizeNotExistsException : Exception
     {
         /// <summary>
         /// Исключение, вызываемое, если размера одежды, переданного в запросе не существует

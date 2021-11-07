@@ -2,7 +2,7 @@
 
 namespace Route256.MerchandiseService.Domain.AggregationModels.MerchItemAggregationModel
 {
-    public class Colour : Enumeration
+    public sealed class Colour : Enumeration
     {
         public static Colour OzonColour = new(1, nameof(OzonColour));
         public static Colour Red = new(2, nameof(Red));

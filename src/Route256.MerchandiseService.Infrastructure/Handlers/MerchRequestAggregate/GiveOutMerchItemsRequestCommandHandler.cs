@@ -8,7 +8,7 @@ using Route256.MerchandiseService.Infrastructure.Commands.GiveOutMerchItemReques
 namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggregate
 {
     
-    public class ExtraditeMerchItemsRequestCommandHandler : IRequestHandler<GiveOutMerchItemsRequestCommand>
+    internal class ExtraditeMerchItemsRequestCommandHandler : IRequestHandler<GiveOutMerchItemsRequestCommand>
     {
         private readonly IExtraditeMerchItemAggregationRepository _extraditeMerchItemAggregationRepository;
         private readonly IMerchItemAggregationRepository _merchItemAggregationRepository;
@@ -29,10 +29,8 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
         {
             foreach (var merchItem in itemsRequest.MerchItems)
             {
-                var merch = await _merchItemAggregationRepository.FindByProperties(merchItem.ItemType,
-                    merchItem.Colour, merchItem?.ClothingSize, cancellationToken);
-                await _extraditeMerchItemAggregationRepository.CreateAsync(
-                    new ExtraditeMerchItemRequest(null, RequestStatus.InWork, merch.MerchId, itemsRequest.EmployeeId), cancellationToken);
+                var merch = await _merchItemAggregationRepository.GetByProperties(merchItem.ItemType, merchItem.Colour, merchItem?.ClothingSize, cancellationToken);
+                await _extraditeMerchItemAggregationRepository.CreateAsync(new ExtraditeMerchItemRequest(RequestStatus.InWork, merch.MerchId, itemsRequest.EmployeeId), cancellationToken);
             }
             
             return Unit.Value;
