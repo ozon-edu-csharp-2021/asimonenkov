@@ -16,7 +16,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Route256.MerchandiseService.Grpc\Route256.MerchandiseService.Grpc.csproj" />
-      <ProjectReference Include="..\Route256.MerchandiseService.HttpModels\Route256.MerchandiseService.HttpModels.csproj" />
       <ProjectReference Include="..\Route256.MerchandiseService.Infrastructure\Route256.MerchandiseService.Infrastructure.csproj" />
     </ItemGroup>
 
