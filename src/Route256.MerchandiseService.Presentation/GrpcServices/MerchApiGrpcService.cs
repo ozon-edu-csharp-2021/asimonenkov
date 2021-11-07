@@ -27,8 +27,15 @@ namespace Route256.MerchandiseService.Presentation.GrpcServices
             _logger = logger;
         }
 
-        public override async Task<SendRequestToGiveOutMerchResponse> SendRequestToGiveOutMerch(
-            SendRequestToGiveOutMerchRequest model,
+        public override async Task<Empty> SendRequestToGiveOutMerchItem(
+            SendRequestToGiveOutMerchItemRequest model,
+            ServerCallContext context)
+        {
+            throw new NotImplementedException();
+        }
+        
+        public override async Task<Empty> SendRequestToGiveOutMerchPack(
+            SendRequestToGiveOutMerchPackRequest model,
             ServerCallContext context)
         {
             throw new NotImplementedException();
