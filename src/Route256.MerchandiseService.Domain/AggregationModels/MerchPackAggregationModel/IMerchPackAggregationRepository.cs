@@ -13,14 +13,6 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.MerchPackAggregat
     {
         /// <summary>
         /// Получить набор мерча по названию
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="cancellationToken">Токен для отмены операции. <see cref="CancellationToken"/></param>
-        /// <returns>Объект запроса</returns>
-        Task<MerchPack> FindByNameAsync(MerchPackName name, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Получить набор мерча по названию
         /// Если мерч не найден, выдает ошибку
         /// </summary>
         /// <param name="name"></param>

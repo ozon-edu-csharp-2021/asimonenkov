@@ -12,29 +12,6 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.ChangeMerchPackFi
     public interface IChangeMerchPackFillingRequestRepository : IRepository<ChangeMerchPackFillingRequest>
     {
         /// <summary>
-        /// Получить запрос по идентификатору
-        /// </summary>
-        /// <param name="cancellationToken">Токен для отмены операции. <see cref="CancellationToken"/></param>
-        /// <returns>Объект запроса</returns>
-        Task<IReadOnlyList<ChangeMerchPackFillingRequest>> FindByIdAsync(int id, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Получить запрос по названию набора мерча
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="cancellationToken">Токен для отмены операции. <see cref="CancellationToken"/></param>
-        /// <returns>Объект запроса</returns>
-        Task<IReadOnlyList<ChangeMerchPackFillingRequest>> FindByNameAsync(MerchPackName name, CancellationToken cancellationToken = default);
-        
-        /// <summary>
-        /// Получить запрос по идентификатору
-        /// Если запрос не найден, выдает ошибку
-        /// </summary>
-        /// <param name="cancellationToken">Токен для отмены операции. <see cref="CancellationToken"/></param>
-        /// <returns>Объект запроса</returns>
-        Task<IReadOnlyList<ChangeMerchPackFillingRequest>> GetByIdAsync(int id, CancellationToken cancellationToken = default);
-
-        /// <summary>
         /// Получить запрос по названию набора мерча
         /// Если запрос не найден, выдает ошибку
         /// </summary>

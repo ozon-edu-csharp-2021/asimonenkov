@@ -13,14 +13,14 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
         GetMerchItemGiveOutInfoResponse>
     {
         private readonly IMerchItemAggregationRepository _merchItemAggregationRepository;
-        private readonly IExtraditeMerchItemAggregationRepository _extraditeMerchItemAggregationRepository;
+        private readonly IGiveOutMerchItemAggregationRepository _giveOutMerchItemAggregationRepository;
 
         public GetMerchItemExtraditionInfoRequestQueryHandler(
             IMerchItemAggregationRepository merchItemAggregationRepository,
-            IExtraditeMerchItemAggregationRepository extraditeMerchItemAggregationRepository)
+            IGiveOutMerchItemAggregationRepository giveOutMerchItemAggregationRepository)
         {
             _merchItemAggregationRepository = merchItemAggregationRepository;
-            _extraditeMerchItemAggregationRepository = extraditeMerchItemAggregationRepository;
+            _giveOutMerchItemAggregationRepository = giveOutMerchItemAggregationRepository;
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
         {
             var merch = await _merchItemAggregationRepository.GetByProperties(request.MerchItem.ItemType, request.MerchItem.Colour, request.MerchItem?.ClothingSize, cancellationToken);
             
-            var extraditionInfo = await _extraditeMerchItemAggregationRepository.FindByEmployeeIdAndMerchId(request.EmployeeId, merch.MerchId, cancellationToken);
+            var extraditionInfo = await _giveOutMerchItemAggregationRepository.FindByEmployeeIdAndMerchId(request.EmployeeId, merch.MerchId, cancellationToken);
             
             if (extraditionInfo.Count == 0)
             {

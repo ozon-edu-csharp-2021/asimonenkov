@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1D6BA17C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.Domain.Tests", "tests\Route256.MerchandiseService.Domain.Tests\Route256.MerchandiseService.Domain.Tests.csproj", "{885C485F-9501-45E2-8FAD-907C0FB4EBD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Route256.MerchandiseService.Migrator", "src\Route256.MerchandiseService.Migrator\Route256.MerchandiseService.Migrator.csproj", "{BB46D14D-50A5-4263-812A-1A4FB562C078}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{885C485F-9501-45E2-8FAD-907C0FB4EBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{885C485F-9501-45E2-8FAD-907C0FB4EBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{885C485F-9501-45E2-8FAD-907C0FB4EBD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB46D14D-50A5-4263-812A-1A4FB562C078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB46D14D-50A5-4263-812A-1A4FB562C078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB46D14D-50A5-4263-812A-1A4FB562C078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB46D14D-50A5-4263-812A-1A4FB562C078}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8642D267-A663-443F-85E2-E9F45B8287F4} = {6454308F-C387-41A3-AB49-1CEBC1169241}
@@ -54,5 +60,6 @@ Global
 		{B0EA0408-D164-4F92-8D03-C3547E29490B} = {6454308F-C387-41A3-AB49-1CEBC1169241}
 		{55925EE6-F7E0-46C1-8A73-808AE4557544} = {6454308F-C387-41A3-AB49-1CEBC1169241}
 		{885C485F-9501-45E2-8FAD-907C0FB4EBD8} = {1D6BA17C-AE00-471F-8656-FA32BD4FCF15}
+		{BB46D14D-50A5-4263-812A-1A4FB562C078} = {6454308F-C387-41A3-AB49-1CEBC1169241}
 	EndGlobalSection
 EndGlobal

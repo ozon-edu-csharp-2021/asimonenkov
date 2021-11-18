@@ -5,7 +5,7 @@ namespace Route256.MerchandiseService.Domain.Contracts
 {
     public interface IUnitOfWork
     {
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
-        Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default);
+        ValueTask StartTransaction(CancellationToken cancellationToken = default);
+        Task SaveEntitiesAsync(CancellationToken cancellationToken = default);
     }
 }

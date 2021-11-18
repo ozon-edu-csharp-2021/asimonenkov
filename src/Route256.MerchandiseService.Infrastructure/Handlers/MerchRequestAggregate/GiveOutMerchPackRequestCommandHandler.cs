@@ -11,13 +11,13 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
     internal class ExtraditeMerchPackRequestCommandHandler : IRequestHandler<GiveOutMerchPackRequestCommand>
     {
         private readonly IMerchPackAggregationRepository _merchPackAggregationRepository;
-        private readonly IExtraditeMerchPackAggregationRepository _extraditeMerchPackAggregationRepository;
+        private readonly IGiveOutMerchPackAggregationRepository _giveOutMerchPackAggregationRepository;
 
         public ExtraditeMerchPackRequestCommandHandler(IMerchPackAggregationRepository merchPackAggregationRepository,
-            IExtraditeMerchPackAggregationRepository extraditeMerchPackAggregationRepository)
+            IGiveOutMerchPackAggregationRepository giveOutMerchPackAggregationRepository)
         {
             _merchPackAggregationRepository = merchPackAggregationRepository;
-            _extraditeMerchPackAggregationRepository = extraditeMerchPackAggregationRepository;
+            _giveOutMerchPackAggregationRepository = giveOutMerchPackAggregationRepository;
         }
 
         /// <summary>
@@ -26,8 +26,8 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
         public async Task<Unit> Handle(GiveOutMerchPackRequestCommand request, CancellationToken cancellationToken)
         {
             var merchPack = await _merchPackAggregationRepository.GetByNameAsync(request.MerchPackName, cancellationToken);
-            var extraditePackRequest = new ExtraditeMerchPackRequest(RequestStatus.InWork, merchPack.PackName, request.EmployeeId);
-            await _extraditeMerchPackAggregationRepository.CreateAsync(extraditePackRequest, cancellationToken);
+            var extraditePackRequest = new GiveOutMerchPackRequest(RequestStatus.InWork, merchPack.PackName, request.EmployeeId);
+            await _giveOutMerchPackAggregationRepository.CreateAsync(extraditePackRequest, cancellationToken);
             return Unit.Value;
         }
     }

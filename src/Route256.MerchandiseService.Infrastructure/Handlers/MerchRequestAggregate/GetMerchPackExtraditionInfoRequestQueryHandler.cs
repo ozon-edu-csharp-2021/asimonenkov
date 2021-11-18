@@ -15,16 +15,16 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
         GetMerchPackExtraditionInfoRequestQuery,
         GetMerchPackGiveOutInfoResponse>
     {
-        private readonly IExtraditeMerchPackAggregationRepository _extraditeMerchPackAggregationRepository;
+        private readonly IGiveOutMerchPackAggregationRepository _giveOutMerchPackAggregationRepository;
         private readonly IMerchItemAggregationRepository _merchItemAggregationRepository;
         private readonly IChangeMerchPackFillingRequestRepository _changeMerchPackFillingRequestRepository;
 
         public GetMerchPackExtraditionInfoRequestQueryHandler(
-            IExtraditeMerchPackAggregationRepository extraditeMerchPackAggregationRepository,
+            IGiveOutMerchPackAggregationRepository giveOutMerchPackAggregationRepository,
             IMerchItemAggregationRepository merchItemAggregationRepository,
             IChangeMerchPackFillingRequestRepository changeMerchPackFillingRequestRepository)
         {
-            _extraditeMerchPackAggregationRepository = extraditeMerchPackAggregationRepository;
+            _giveOutMerchPackAggregationRepository = giveOutMerchPackAggregationRepository;
             _merchItemAggregationRepository = merchItemAggregationRepository;
             _changeMerchPackFillingRequestRepository = changeMerchPackFillingRequestRepository;
         }
@@ -40,7 +40,7 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
             CancellationToken cancellationToken)
         {
             var merchPackFillingChanges = await _changeMerchPackFillingRequestRepository.GetByNameAsync(request.MerchPackName, cancellationToken);
-            var giveOutRequests = await _extraditeMerchPackAggregationRepository.GetByEmployeeIdAndMerchPackNameAsync(request.EmployeeId, request.MerchPackName, cancellationToken);
+            var giveOutRequests = await _giveOutMerchPackAggregationRepository.GetByEmployeeIdAndMerchPackNameAsync(request.EmployeeId, request.MerchPackName, cancellationToken);
             var merchItemsToGiveOut = new List<MerchItem>();
 
             if (giveOutRequests.Count == 0)
