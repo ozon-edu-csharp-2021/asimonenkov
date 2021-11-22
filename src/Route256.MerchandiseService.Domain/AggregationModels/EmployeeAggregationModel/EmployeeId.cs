@@ -6,7 +6,7 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.EmployeeAggregati
 {
     public sealed class EmployeeId : ValueObject
     {
-        private Guid Value { get; }
+        public Guid Value { get; }
         
         public EmployeeId(Guid value)
         {

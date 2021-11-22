@@ -10,12 +10,12 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
     
     internal class ExtraditeMerchItemsRequestCommandHandler : IRequestHandler<GiveOutMerchItemsRequestCommand>
     {
-        private readonly IExtraditeMerchItemAggregationRepository _extraditeMerchItemAggregationRepository;
+        private readonly IGiveOutMerchItemAggregationRepository _giveOutMerchItemAggregationRepository;
         private readonly IMerchItemAggregationRepository _merchItemAggregationRepository;
 
-        public ExtraditeMerchItemsRequestCommandHandler(IExtraditeMerchItemAggregationRepository extraditeMerchItemAggregationRepository, IMerchItemAggregationRepository merchItemAggregationRepository)
+        public ExtraditeMerchItemsRequestCommandHandler(IGiveOutMerchItemAggregationRepository giveOutMerchItemAggregationRepository, IMerchItemAggregationRepository merchItemAggregationRepository)
         {
-            _extraditeMerchItemAggregationRepository = extraditeMerchItemAggregationRepository;
+            _giveOutMerchItemAggregationRepository = giveOutMerchItemAggregationRepository;
             _merchItemAggregationRepository = merchItemAggregationRepository;
         }
 
@@ -30,7 +30,7 @@ namespace Route256.MerchandiseService.Infrastructure.Handlers.MerchRequestAggreg
             foreach (var merchItem in itemsRequest.MerchItems)
             {
                 var merch = await _merchItemAggregationRepository.GetByProperties(merchItem.ItemType, merchItem.Colour, merchItem?.ClothingSize, cancellationToken);
-                await _extraditeMerchItemAggregationRepository.CreateAsync(new ExtraditeMerchItemRequest(RequestStatus.InWork, merch.MerchId, itemsRequest.EmployeeId), cancellationToken);
+                await _giveOutMerchItemAggregationRepository.CreateAsync(new GiveOutMerchItemRequest(RequestStatus.InWork, merch.MerchId, itemsRequest.EmployeeId), cancellationToken);
             }
             
             return Unit.Value;

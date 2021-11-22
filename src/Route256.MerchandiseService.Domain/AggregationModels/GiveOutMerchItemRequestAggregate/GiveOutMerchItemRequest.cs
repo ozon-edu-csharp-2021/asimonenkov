@@ -1,34 +1,34 @@
 ﻿using System;
 using Route256.MerchandiseService.Domain.AggregationModels.EmployeeAggregationModel;
-using Route256.MerchandiseService.Domain.AggregationModels.MerchPackAggregationModel;
+using Route256.MerchandiseService.Domain.AggregationModels.MerchItemAggregationModel;
 using Route256.MerchandiseService.Domain.Models;
 
-namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchPackRequestAggregate
+namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchItemRequestAggregate
 {
     /// <summary>
     /// Запрос на получение набора мерча
     /// </summary>
-    public sealed class ExtraditeMerchPackRequest : Entity
+    public sealed class GiveOutMerchItemRequest : Entity
     {
-        public ExtraditeMerchPackRequest(RequestNumber requestNumber,
+        public GiveOutMerchItemRequest(RequestNumber requestNumber,
             RequestStatus requestStatus,
-            MerchPackName merchPackName,
+            MerchId merchId,
             EmployeeId employeeId)
         {
             RequestNumber = requestNumber;
             RequestStatus = requestStatus;
-            MerchPackName = merchPackName;
+            MerchId = merchId;
             EmployeeId = employeeId;
             SetExtraditionDate();
         }
         
-        public ExtraditeMerchPackRequest(
+        public GiveOutMerchItemRequest(
             RequestStatus requestStatus,
-            MerchPackName merchPackName,
+            MerchId merchId,
             EmployeeId employeeId)
         {
             RequestStatus = requestStatus;
-            MerchPackName = merchPackName;
+            MerchId = merchId;
             EmployeeId = employeeId;
             SetExtraditionDate();
         }
@@ -46,7 +46,7 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchPackR
         /// <summary>
         /// Id набора, который необходимо выдать
         /// </summary>
-        public MerchPackName MerchPackName { get; set; }
+        public MerchId MerchId { get; set; }
         
         /// <summary>
         /// Id сотрудника, которому выдается набор
@@ -54,10 +54,10 @@ namespace Route256.MerchandiseService.Domain.AggregationModels.GiveOutMerchPackR
         public EmployeeId EmployeeId { get; set; }
         
         /// <summary>
-        /// Дата выдачи набора
+        /// Дата выдачи мерча
         /// </summary>
-        public GiveOutDate GiveOutDate { get; private set; }
-        
+        public GiveOutDate GiveOutDate { get; set; }
+
         private void SetExtraditionDate()
         {
             GiveOutDate = new GiveOutDate(DateTime.Now);
